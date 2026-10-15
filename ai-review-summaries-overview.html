@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Hidden Cost of AI-Generated Review Summaries: a consumer research case study combining real-world platform data with eleven behavioural experiments.">
+  <title>The Hidden Cost of AI-Generated Review Summaries | Yuxin Fu</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+    :root{--blue:#0047ab;--text:#273343;--muted:#667180;--line:#d9dfea;--paper:#f6f7fc;--tint:#e9eefb;--control:#6094ed;--ai:#83bf89;--green:#35614c}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;background:#f4f4f4;color:var(--text);font-family:'Source Sans 3',Arial,sans-serif;font-size:16px;line-height:1.65}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}button,a{-webkit-tap-highlight-color:transparent}:focus-visible{outline:3px solid #85a8e3;outline-offset:5px}h1,h2,h3,h4{font-family:Outfit,'Trebuchet MS',Arial,sans-serif;line-height:1.2}p{margin:0 0 16px}h1{font-size:clamp(32px,3.3vw,44px);letter-spacing:-.7px;color:var(--blue);font-weight:700;margin:8px 0 14px}h2{color:var(--blue);font-weight:600;font-size:27px;margin:0 0 20px}h3{font-size:21px;font-weight:600;margin:0 0 12px}h4{font-size:17px;font-weight:500;margin:20px 0 12px}.skip{position:absolute;top:-100px}.skip:focus{top:12px;left:15px;padding:10px;background:white;z-index:30}
+    .site-header{background:white;box-shadow:0 9px 12px #00000016}.site-nav{max-width:1500px;margin:auto;min-height:122px;padding:24px 4%;display:flex;align-items:center;justify-content:space-between;gap:26px;font-family:Outfit,Arial,sans-serif}.brand{font-size:25px;color:#111;letter-spacing:-.6px}.site-links{display:flex;gap:30px;font-size:16px}.site-links a:hover{color:var(--blue)}.resume-button{border:0;border-radius:100px;padding:21px 34px;background:#050505;color:#fff;font-size:16px}.menu-button{display:none;background:none;border:1px solid var(--line);border-radius:5px;padding:8px 12px;color:var(--text)}
+    .case-shell{max-width:1380px;width:92%;margin:42px auto 64px;border-radius:8px;background:var(--paper);padding:24px 16px 36px}.chapter-nav{display:grid;grid-template-columns:.75fr repeat(5,1fr) 1.35fr;gap:6px;margin-bottom:24px;font-family:Outfit,Arial,sans-serif;font-size:13px;line-height:1.3}.chapter-nav a{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:7px;background:#fff;padding:11px 13px;min-height:42px;transition:background .15s}.chapter-nav a:hover{background:var(--tint);color:var(--blue)}.chapter-nav span{font-family:monospace;color:#8792a2}.chapter-nav a[aria-current]{background:var(--blue);color:white;border-color:var(--blue)}
+    .case-layout{display:grid;grid-template-columns:224px minmax(0,1fr);gap:40px}.toc{border-right:1px solid var(--line);align-self:start;position:sticky;top:24px;padding:16px 20px 18px 0;font-family:Outfit,Arial,sans-serif;font-size:14px}.eyebrow{font-family:'Courier New',monospace;font-size:11px;line-height:1.6;letter-spacing:1.7px;text-transform:uppercase;color:var(--muted)}.toc .eyebrow{margin:0 0 10px 14px}.toc ul{list-style:none;padding:0;margin:0}.toc a{display:block;border-left:2px solid transparent;padding:6px 12px}.toc a:hover,.toc a[aria-current="location"]{color:var(--blue);border-left-color:var(--blue);background:#e9eefb60}.toc a[aria-current="location"]{font-weight:600}.main-copy{min-width:0;padding-right:0}.lead{padding:17px 23px;background:var(--tint);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;font-size:17px;line-height:1.65;margin-bottom:24px}.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:0 0 38px}.stat{background:white;border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:9px;padding:16px 15px;box-shadow:0 1px 3px #1b35500a}.stat dt{font-family:'Courier New',monospace;font-size:26px;font-weight:700;color:var(--blue);line-height:1.3;white-space:nowrap}.stat dd{font-size:14px;line-height:1.45;color:var(--muted);margin:6px 0 0}.content-section{border-top:1px solid var(--line);padding:32px 0 4px;margin-top:24px;scroll-margin-top:24px}.questions{padding-left:22px;margin:10px 0 6px}.questions li{padding-left:3px;margin:8px 0}.study-grid{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:20px}.study-grid>div{min-width:0;border-right:1px solid var(--line);padding-right:18px}.study-grid>div:last-child{border:0;padding:0}.study-grid h3{font-size:18px;color:var(--blue)}.study-grid p{font-size:15px;line-height:1.6}.study-grid strong{font-weight:600}.analysis-list{margin:0;padding-left:18px;font-size:15px;line-height:1.7}.finding+.finding{margin-top:34px;border-top:1px solid var(--line);padding-top:28px}.finding-title{display:flex;gap:13px;align-items:baseline}.number{font-family:monospace;color:var(--blue);font-size:13px;letter-spacing:1px;flex-shrink:0}.field-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px 24px;margin:18px 0 24px}.field-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px}.field-stats strong{font-family:'Courier New',monospace;font-size:32px;display:block;color:var(--blue);line-height:1.3}.field-stats span{font-size:14px;color:var(--muted)}.note{font-size:13px;line-height:1.55;color:var(--muted);margin:14px 0 0}.bar-chart{margin:16px 0 22px;background:white;border:1px solid var(--line);border-radius:8px;padding:24px}.figure-title{font-family:Outfit,Arial,sans-serif;font-size:18px;font-weight:500;line-height:1.35;margin-bottom:6px}.figure-subtitle{font-size:14px;color:var(--muted);margin:0 0 20px}.horizontal-row{display:grid;grid-template-columns:160px 1fr 56px;gap:16px;align-items:center;margin:16px 0;font-size:14px}.track{height:27px;background:#f1f3f7;border-radius:4px;overflow:hidden}.fill{display:block;height:100%;border-radius:4px;background:var(--control)}.fill.ai{background:var(--ai)}.horizontal-row strong{font-family:monospace;color:var(--text);font-size:16px}.chart-axis{display:flex;justify-content:space-between;margin:0 72px 0 176px;color:var(--muted);font:11px monospace}.legend{display:flex;justify-content:flex-end;gap:18px;font-size:13px;align-items:center;margin:4px 0 16px}.legend span{display:flex;align-items:center;gap:7px}.swatch{width:11px;height:11px;border-radius:3px;background:var(--control)}.swatch.ai{background:var(--ai)}.chart-svg{display:block;width:100%;height:auto;overflow:visible}.chart-svg text{font-family:'Source Sans 3',Arial,sans-serif;fill:var(--muted);font-size:14px}.chart-svg .value{fill:var(--text);font-size:16px;font-weight:600}.chart-svg .group-label{fill:var(--text);font-size:15px}.chart-svg .grid{stroke:#e1e6ef;stroke-dasharray:3 4}.chart-svg .baseline{stroke:#b5c1d3}.chart-svg .control-bar{fill:var(--control)}.chart-svg .ai-bar{fill:var(--ai)}.data-table{margin-top:14px;font-size:13px}.data-table summary{cursor:pointer;color:var(--blue);width:max-content}.data-table table{border-collapse:collapse;width:100%;margin-top:12px;text-align:left;font-size:13px}.data-table th,.data-table td{border-bottom:1px solid var(--line);padding:8px}.data-table th{font-weight:600}.data-table .source{display:inline-block;margin-top:10px;text-decoration:underline;color:var(--muted)}
+    .recommendation{display:grid;grid-template-columns:30px 1fr;gap:14px;margin:26px 0}.recommendation h3{font-size:20px}.recommendation p:last-child{margin-bottom:0}.tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:12px}.tag{font-size:13px;line-height:1.3;padding:8px 12px;border:1px solid var(--line);background:white;border-radius:5px}.chapter-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}.chapter{padding:20px;border:1px solid var(--line);border-radius:8px;background:#fff;scroll-margin-top:24px}.chapter:target{border-color:var(--blue);box-shadow:0 0 0 2px #0047ab12}.chapter .eyebrow{color:var(--blue)}.chapter h3{font-size:19px;margin:9px 0}.chapter p{font-size:14px;line-height:1.5;color:var(--muted);margin:0}.chapter-status{font-size:10px;letter-spacing:.7px;text-transform:uppercase;color:#6b7788;float:right}.back-link{border-top:1px solid var(--line);padding:23px 0 2px;margin-top:28px;font-family:Outfit,Arial,sans-serif;color:var(--blue);font-size:14px}.back-link a:hover{text-decoration:underline}.footer{background:white;border-top:1px solid var(--line);padding:45px 4%;display:flex;justify-content:space-between;gap:30px;font-size:14px;color:var(--muted)}.footer strong{font-family:Outfit,Arial,sans-serif;display:block;font-size:22px;font-weight:500;color:#151d29}.footer a:hover{color:var(--blue)}
+    dialog{border:1px solid var(--line);border-radius:10px;width:calc(100% - 32px);max-width:650px;padding:36px;max-height:88vh;color:var(--text);background:white}dialog::backdrop{background:#14243885;backdrop-filter:blur(4px)}dialog h2{margin:20px 0}dialog h3{margin-top:24px;font-size:19px}.close{float:right;border:1px solid var(--line);background:white;border-radius:50%;width:34px;height:34px}
+    @media(min-width:1450px){.main-copy{padding-right:8px}.case-layout{grid-template-columns:235px minmax(0,1fr);gap:42px}}
+    @media(max-width:1100px){.case-layout{grid-template-columns:180px minmax(0,1fr);gap:26px}.stats{gap:8px}.stat{padding:13px 10px}.stat dt{font-size:22px}.chapter-nav{grid-template-columns:repeat(4,minmax(0,1fr))}.study-grid{gap:14px}}
+    @media(max-width:800px){.site-nav{min-height:90px;padding:20px 5%;gap:16px}.site-links{gap:20px}.resume-button{padding:13px 22px;font-size:14px}.brand{font-size:22px}.case-shell{width:94%;margin:26px auto 40px;padding:16px}.case-layout{display:block}.toc{position:static;border:1px solid var(--line);border-radius:7px;padding:12px;background:white;margin:0 0 24px}.toc .eyebrow{margin:0 0 8px 0}.toc ul{display:flex;flex-wrap:wrap;gap:4px 12px}.toc a{padding:4px 0;border-left:0;border-bottom:2px solid transparent;font-size:12px}.toc a[aria-current="location"]{border-left:0;border-bottom-color:var(--blue)}.stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.stat dt{font-size:25px}.study-grid{gap:20px}.chapter-nav{font-size:12px}.chapter-nav a{padding:9px 10px}.footer{flex-wrap:wrap}.content-section{padding-top:27px}.lead{font-size:16px}}
+    @media(max-width:560px){.site-nav{flex-wrap:wrap;gap:12px;min-height:82px}.brand{margin-right:auto}.resume-button{padding:11px 18px}.menu-button{display:block}.site-links{display:none;order:5;flex-basis:100%;justify-content:space-between;padding-top:12px;border-top:1px solid var(--line)}.site-links.open{display:flex}.case-shell{width:96%;padding:12px;margin-top:20px}.chapter-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-bottom:18px}.chapter-nav a:first-child{grid-column:1/-1}.toc{margin-bottom:22px}.eyebrow{font-size:10px;letter-spacing:1.4px}h1{font-size:32px;line-height:1.15;letter-spacing:-.6px}h2{font-size:25px}h3{font-size:20px}.lead{padding:14px 16px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:last-child{grid-column:1/-1}.stat dt{font-size:24px}.stat dd{font-size:13px}.study-grid{grid-template-columns:1fr}.study-grid>div{border-right:0;border-bottom:1px solid var(--line);padding:0 0 10px}.study-grid p{font-size:16px}.analysis-list{font-size:16px}.bar-chart{padding:17px 12px}.horizontal-row{grid-template-columns:115px 1fr 45px;gap:8px;font-size:12px}.chart-axis{margin:0 53px 0 123px}.horizontal-row strong{font-size:13px}.track{height:23px}.figure-title{font-size:17px}.chart-svg text{font-size:16px}.chart-svg .group-label{font-size:17px}.chart-svg .value{font-size:18px}.legend{font-size:12px}.field-box{padding:18px}.field-stats{gap:12px}.field-stats strong{font-size:28px}.finding-title{gap:9px}.chapter-grid{grid-template-columns:1fr}.recommendation{gap:9px;grid-template-columns:24px 1fr}.footer{padding:30px 5%;font-size:13px}.footer strong{font-size:21px}.footer>div:first-child{flex-basis:100%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+    @media print{body{background:white}.site-header,.chapter-nav,.toc,.back-link,dialog,.menu-button{display:none}.case-shell{width:100%;margin:0;padding:0;background:white}.case-layout{display:block}.bar-chart,.stat,.chapter{break-inside:avoid}.footer{padding:20px 0}a{color:inherit}.content-section{break-inside:auto}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#overview">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="brand" href="index.html#home">Yuxin Fu</a>
+      <div class="site-links" id="site-links"><a href="index.html#home">Home</a><a href="index.html#projects">Projects</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></div>
+      <button class="resume-button" type="button" id="open-resume">Resume</button>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-links" aria-label="Open navigation">Menu</button>
+    </nav>
+  </header>
+  <main class="case-shell">
+    <nav class="chapter-nav" aria-label="Case study overview and chapter previews">
+      <a href="#overview" aria-current="page">Overview</a>
+      <a href="#step-1" aria-label="Step 1: Problem definition — chapter preview"><span>1</span>Problem definition</a>
+      <a href="#step-2" aria-label="Step 2: Approach — chapter preview"><span>2</span>Approach</a>
+      <a href="#step-3" aria-label="Step 3: Research design — chapter preview"><span>3</span>Research design</a>
+      <a href="#step-4" aria-label="Step 4: Data collection — chapter preview"><span>4</span>Data collection</a>
+      <a href="#step-5" aria-label="Step 5: Analysis — chapter preview"><span>5</span>Analysis</a>
+      <a href="#step-6" aria-label="Step 6: Insights and recommendations — chapter preview"><span>6</span>Insights &amp; recommendations</a>
+    </nav>
+    <div class="case-layout">
+      <aside class="toc" aria-label="On this page">
+        <div class="eyebrow">On this page</div>
+        <ul><li><a href="#ov-question" aria-current="location">The question</a></li><li><a href="#ov-study">The study</a></li><li><a href="#ov-found">What the research found</a></li><li><a href="#ov-recs">Recommendations</a></li><li><a href="#ov-tools">Methods &amp; tools</a></li><li><a href="#ov-read">Read the case study</a></li></ul>
+      </aside>
+      <article class="main-copy" id="overview" tabindex="-1">
+        <div class="eyebrow">Consumer research case study · AI &amp; digital platforms</div>
+        <h1>The Hidden Cost of AI-Generated Review Summaries</h1>
+        <p class="lead">As major platforms (e.g., Amazon) invest billions in generative AI, AI-generated review summaries are becoming increasingly common in the digital customer journey. But could this convenience come at an unexpected cost? This case study finds out the answer using real-world platform data and eleven experiments.</p>
+        <dl class="stats" aria-label="Key numbers">
+          <div class="stat"><dt>42,274</dt><dd>Real-world reviews analysed</dd></div>
+          <div class="stat"><dt>11</dt><dd>Behavioural experiments</dd></div>
+          <div class="stat"><dt>5,114</dt><dd>Experimental participants</dd></div>
+          <div class="stat"><dt>−2.7%</dt><dd>Review volume after AI summaries</dd></div>
+          <div class="stat"><dt>−11.1%</dt><dd>Total review text produced</dd></div>
+        </dl>
+
+        <section class="content-section" id="ov-question" aria-labelledby="question-title">
+          <h2 id="question-title">The question</h2>
+          <p>Online platforms increasingly use AI to summarise large volumes of customer reviews. These summaries are valuable to readers because they reduce information overload and make it easier to understand overall customer sentiment.</p>
+          <p>But platforms face a two-sided challenge: the same reviews that AI summarises must first be created by consumers.</p>
+          <p>The project therefore focused on three questions:</p>
+          <ol class="questions"><li>Does introducing AI-generated review summaries reduce consumers' willingness to contribute reviews?</li><li>Why would the presence of an AI summary change how much effort people put into writing?</li><li>Can platform design preserve the benefits of AI summaries without discouraging user-generated content?</li></ol>
+        </section>
+
+        <section class="content-section" id="ov-study" aria-labelledby="study-title">
+          <h2 id="study-title">The study</h2>
+          <div class="study-grid">
+            <div><h3>Design</h3><p>A multi-method research programme combining observational platform data with controlled behavioural experiments.</p></div>
+            <div><h3>Sample</h3><p><strong>Field data</strong><br>42,274 text reviews from 188 hotels across five U.S. leisure destinations, observed over 312 days, resulting in 117,312 observations.</p><p><strong>Experiments</strong><br>11 experiments completed with a total of 5,114 participants.</p></div>
+            <div><h3>Analysis</h3><ul class="analysis-list"><li>Difference-in-differences</li><li>Fixed-effects modelling</li><li>Between-subjects experiments</li><li>ANOVA</li><li>Mediation analysis</li><li>Moderated mediation</li><li>Robustness checks</li></ul></div>
+          </div>
+        </section>
+
+        <section class="content-section" id="ov-found" aria-labelledby="found-title">
+          <h2 id="found-title">What the research found</h2>
+          <div class="finding">
+            <div class="finding-title"><span class="number">01</span><h3>AI summaries reduced review contribution</h3></div>
+            <div class="field-box"><h4 style="margin-top:0">Real-world platform data</h4><div class="field-stats"><div><strong>−11.1%</strong><span>Total review text produced</span></div><div><strong>−2.7%</strong><span>Review volume</span></div></div><p class="note">Estimated using a difference-in-differences analysis of 42,274 text reviews from 188 hotels across TripAdvisor and Expedia over 312 days.</p></div>
+            <h4>Confirmed in a behavioural experiment</h4>
+            <figure class="bar-chart" aria-labelledby="click-title">
+              <figcaption class="figure-title" id="click-title">Clicked “Leave a Review”</figcaption>
+              <div class="horizontal-row"><span>Control</span><div class="track" aria-hidden="true"><span class="fill" style="width:28.6%"></span></div><strong>28.6%</strong></div>
+              <div class="horizontal-row"><span>AI-generated summary</span><div class="track" aria-hidden="true"><span class="fill ai" style="width:19.7%"></span></div><strong>19.7%</strong></div>
+              <div class="chart-axis" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></div>
+              <p class="note">Based on a preregistered behavioural experiment with 399 participants, 199 were assigned to the control group and 200 to the treatment group.</p>
+            </figure>
+          </div>
+
+          <div class="finding">
+            <div class="finding-title"><span class="number">02</span><h3>The issue was not AI itself — it was recognition</h3></div>
+            <p><strong>Why were consumers less motivated to write?</strong></p>
+            <p>The experiments showed that people expected their individual reviews to receive less attention, appreciation and usefulness when an AI summary was already available.</p>
+            <figure class="bar-chart" aria-labelledby="recognition-title">
+              <figcaption class="figure-title" id="recognition-title">AI summaries reduce anticipated recognition</figcaption>
+              <p class="figure-subtitle">Mean scores on 7-point scales. Control vs. AI-generated summary condition.</p>
+              <div class="legend" aria-hidden="true"><span><i class="swatch"></i>Control</span><span><i class="swatch ai"></i>AI summary</span></div>
+              <svg class="chart-svg" viewBox="0 0 660 310" role="img" aria-labelledby="recognition-svg-title" aria-describedby="recognition-svg-desc">
+                <title id="recognition-svg-title">Anticipated helpfulness and social recognition</title><desc id="recognition-svg-desc">On 7-point scales, anticipated helpfulness is 5.77 for control and 5.36 for AI summary; social recognition is 4.72 for control and 4.35 for AI summary. Exact values are also available in the data table below.</desc>
+                <g aria-hidden="true"><path class="grid" d="M44 30H644 M44 85H644 M44 140H644 M44 195H644"/><path class="baseline" d="M44 250H644"/><text x="31" y="35" text-anchor="end">7</text><text x="31" y="90" text-anchor="end">5.25</text><text x="31" y="145" text-anchor="end">3.5</text><text x="31" y="200" text-anchor="end">1.75</text><text x="31" y="255" text-anchor="end">0</text>
+                  <rect class="control-bar" x="103" y="68.657" width="85" height="181.343" rx="5"/><rect class="ai-bar" x="198" y="81.543" width="85" height="168.457" rx="5"/><text class="value" x="145.5" y="59" text-anchor="middle">5.77</text><text class="value" x="240.5" y="72" text-anchor="middle">5.36</text>
+                  <rect class="control-bar" x="400" y="101.657" width="85" height="148.343" rx="5"/><rect class="ai-bar" x="495" y="113.286" width="85" height="136.714" rx="5"/><text class="value" x="442.5" y="92" text-anchor="middle">4.72</text><text class="value" x="537.5" y="104" text-anchor="middle">4.35</text>
+                  <text class="group-label" x="193" y="279" text-anchor="middle">Anticipated helpfulness</text><text class="group-label" x="490" y="279" text-anchor="middle">Social recognition</text><text x="193" y="303" text-anchor="middle">p &lt; .001</text><text x="490" y="303" text-anchor="middle">p = .002</text>
+                </g>
+              </svg>
+              <p class="note">Anticipated helpfulness: p &lt; .001; Social recognition: p = .002<br>Mean scores on 7-point scales; both differences were statistically significant.</p>
+              <details class="data-table"><summary>View chart data</summary><table><caption>Mean scores on 7-point scales</caption><thead><tr><th scope="col">Metric</th><th scope="col">Control</th><th scope="col">AI summary</th></tr></thead><tbody><tr><th scope="row">Anticipated helpfulness</th><td>5.77</td><td>5.36</td></tr><tr><th scope="row">Social recognition</th><td>4.72</td><td>4.35</td></tr></tbody></table><a class="source" href="https://chatgpt.com/s/w_6ad0b57e11888191a14c9628cae6ce3e" target="_blank" rel="noopener noreferrer">Original chart ↗</a></details>
+            </figure>
+          </div>
+
+          <div class="finding">
+            <div class="finding-title"><span class="number">03</span><h3>Platform design can reduce the downside</h3></div>
+            <p>When the interface highlighted ways readers could engage with individual reviews (such as helpful votes, comments and visible acknowledgement), the negative effect of AI summaries became substantially weaker.</p>
+            <p>Without engagement cues, AI summaries reduced willingness to leave a review from 4.99 to 4.39 (p &lt; .001). When the interface highlighted ways readers could engage with individual reviews, the gap narrowed to 4.75 vs. 4.59 and was no longer significant (p = .37).</p>
+            <figure class="bar-chart" aria-labelledby="engagement-title">
+              <figcaption class="figure-title" id="engagement-title">Engagement cues reduce the downside of AI summaries</figcaption>
+              <p class="figure-subtitle">Willingness to leave a review, measured on a 7-point scale (n = 624).</p>
+              <div class="legend" aria-hidden="true"><span><i class="swatch"></i>Control</span><span><i class="swatch ai"></i>AI summary</span></div>
+              <svg class="chart-svg" viewBox="0 0 660 310" role="img" aria-labelledby="engagement-svg-title" aria-describedby="engagement-svg-desc">
+                <title id="engagement-svg-title">Willingness to leave a review with and without engagement cues</title><desc id="engagement-svg-desc">Without engagement cues: control 4.99, AI summary 4.39, p less than .001. With engagement cues: control 4.75, AI summary 4.59, p equals .37. All means use a 7-point scale.</desc>
+                <g aria-hidden="true"><path class="grid" d="M44 30H644 M44 85H644 M44 140H644 M44 195H644"/><path class="baseline" d="M44 250H644"/><text x="31" y="35" text-anchor="end">7</text><text x="31" y="90" text-anchor="end">5.25</text><text x="31" y="145" text-anchor="end">3.5</text><text x="31" y="200" text-anchor="end">1.75</text><text x="31" y="255" text-anchor="end">0</text>
+                  <rect class="control-bar" x="103" y="93.171" width="85" height="156.829" rx="5"/><rect class="ai-bar" x="198" y="112.029" width="85" height="137.971" rx="5"/><text class="value" x="145.5" y="84" text-anchor="middle">4.99</text><text class="value" x="240.5" y="103" text-anchor="middle">4.39</text>
+                  <rect class="control-bar" x="400" y="100.714" width="85" height="149.286" rx="5"/><rect class="ai-bar" x="495" y="105.743" width="85" height="144.257" rx="5"/><text class="value" x="442.5" y="91" text-anchor="middle">4.75</text><text class="value" x="537.5" y="96" text-anchor="middle">4.59</text>
+                  <text class="group-label" x="193" y="279" text-anchor="middle">No engagement cues</text><text class="group-label" x="490" y="279" text-anchor="middle">Engagement cues</text><text x="193" y="303" text-anchor="middle">p &lt; .001</text><text x="490" y="303" text-anchor="middle">p = .37</text>
+                </g>
+              </svg>
+              <p class="note">No engagement cues: p &lt; .001; Engagement cues: p = .37</p>
+              <details class="data-table"><summary>View chart data</summary><table><caption>Mean willingness to leave a review on a 7-point scale</caption><thead><tr><th scope="col">Interface</th><th scope="col">Control</th><th scope="col">AI summary</th></tr></thead><tbody><tr><th scope="row">No engagement cues</th><td>4.99</td><td>4.39</td></tr><tr><th scope="row">Engagement cues</th><td>4.75</td><td>4.59</td></tr></tbody></table><a class="source" href="https://chatgpt.com/s/w_6ad0b5ef43b48191a68c49d43dbcbe94" target="_blank" rel="noopener noreferrer">Original chart ↗</a></details>
+            </figure>
+          </div>
+        </section>
+
+        <section class="content-section" id="ov-recs" aria-labelledby="recs-title">
+          <h2 id="recs-title">Recommendations</h2>
+          <div class="recommendation"><span class="number">01</span><div><h3>Measure both sides of the AI experience</h3><p>Do not evaluate AI summaries only through reader-side metrics such as convenience, engagement or conversion.</p><p>Track contributor-side metrics too — particularly review volume, review length and contribution rates — to identify whether improvements in content consumption are weakening content creation.</p></div></div>
+          <div class="recommendation"><span class="number">02</span><div><h3>Make individual contributions visible</h3><p>Pair AI-generated summaries with clear signals that individual reviews still matter.</p><p>Surface features such as helpful votes, comments, replies and other visible acknowledgement close to individual reviews so contributors can see that readers continue to engage with their content.</p></div></div>
+          <div class="recommendation"><span class="number">03</span><div><h3>Test the ecosystem, not just the feature</h3><p>Before a full rollout, A/B test AI-summary designs against both reader and contributor outcomes.</p><p>The best design is not simply the one that makes reviews easiest to consume — it is the one that balances information efficiency with continued user participation.</p></div></div>
+        </section>
+        <section class="content-section" id="ov-tools" aria-labelledby="tools-title"><h2 id="tools-title">Methods &amp; tools</h2><div class="tags"><span class="tag">Experimental design</span><span class="tag">Difference-in-differences</span><span class="tag">Questionnaire design</span><span class="tag">ANOVA</span><span class="tag">Mediation analysis</span><span class="tag">Moderated mediation</span><span class="tag">Robustness testing</span><span class="tag">SPSS</span><span class="tag">R</span></div></section>
+        <section class="content-section" id="ov-read" aria-labelledby="read-title">
+          <h2 id="read-title">Read the case study</h2>
+          <p class="note">Explore the chapter outlines below. Detailed chapters are in preparation.</p>
+          <div class="chapter-grid">
+            <div class="chapter" id="step-1"><span class="chapter-status">Coming soon</span><div class="eyebrow">Step 1</div><h3>Problem definition</h3><p>The business challenge, stakeholder questions and research objectives.</p></div>
+            <div class="chapter" id="step-2"><span class="chapter-status">Coming soon</span><div class="eyebrow">Step 2</div><h3>Approach</h3><p>How the research programme moved from real-world behaviour to explanation and intervention.</p></div>
+            <div class="chapter" id="step-3"><span class="chapter-status">Coming soon</span><div class="eyebrow">Step 3</div><h3>Research design</h3><p>Field quasi-experiment, controlled experiments, measures and hypotheses.</p></div>
+            <div class="chapter" id="step-4"><span class="chapter-status">Coming soon</span><div class="eyebrow">Step 4</div><h3>Data collection</h3><p>Platform data, participant recruitment, experimental stimuli and quality controls.</p></div>
+            <div class="chapter" id="step-5"><span class="chapter-status">Coming soon</span><div class="eyebrow">Step 5</div><h3>Analysis</h3><p>Difference-in-differences, experimental comparisons, mediation and moderated mediation.</p></div>
+            <div class="chapter" id="step-6"><span class="chapter-status">Coming soon</span><div class="eyebrow">Step 6</div><h3>Insights &amp; recommendations</h3><p>The executive story, implications for AI product design and recommended actions.</p></div>
+          </div>
+        </section>
+        <div class="back-link"><a href="index.html#projects">← Back to selected work</a></div>
+      </article>
+    </div>
+  </main>
+  <footer class="footer"><div><strong>Yuxin Fu</strong>Market Research | Data Analytics</div><div><a href="index.html#projects">Selected work ↗</a><br><a href="index.html#contact">Get in touch ↗</a></div><div>© <span id="year">2026</span> Yuxin Fu<br>Personal portfolio</div></footer>
+  <dialog id="resume" aria-labelledby="resume-title" lang="zh-CN"><button type="button" class="close" aria-label="关闭简历">×</button><div class="eyebrow" lang="en">Profile / Resume</div><h2 id="resume-title" lang="en">Yuxin Fu</h2><p>市场研究与数据分析师 · 你的城市</p><h3>个人简介</h3><p>在这里填写你的专业背景、核心能力和职业方向。</p><h3>工作经历</h3><p>职位名称 · 公司名称 · 起止时间<br>填写你的职责与可核实的项目成果。</p><h3>教育背景</h3><p>学校名称 · 专业 · 学位 · 毕业年份</p><h3>联系</h3><p><a href="mailto:hello@example.com">hello@example.com ↗</a></p></dialog>
+  <script>
+    const menuButton=document.querySelector('.menu-button');
+    const siteLinks=document.querySelector('.site-links');
+    menuButton.addEventListener('click',()=>{const expanded=siteLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(expanded));menuButton.setAttribute('aria-label',expanded?'Close navigation':'Open navigation');});
+    const resume=document.querySelector('#resume');
+    document.querySelector('#open-resume').addEventListener('click',()=>resume.showModal());
+    resume.querySelector('.close').addEventListener('click',()=>resume.close());
+    resume.addEventListener('click',event=>{if(event.target!==resume)return;const rect=resume.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)resume.close();});
+    const sectionLinks=[...document.querySelectorAll('.toc a')];
+    const sections=sectionLinks.map(link=>document.querySelector(link.getAttribute('href')));
+    let scheduled=false;
+    function updateContents(){let active=sections[0];for(const section of sections){if(section.getBoundingClientRect().top<=130)active=section;}sectionLinks.forEach(link=>{if(link.hash==='#'+active.id)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});scheduled=false;}
+    window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(updateContents);}},{passive:true});
+    updateContents();
+    document.querySelector('#year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
