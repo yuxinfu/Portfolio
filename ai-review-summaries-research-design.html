@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research design for a field study and three preregistered experiments: samples, experimental conditions, questionnaire measures, and research quality.">
+  <title>Research Design — AI Review Summaries | Yuxin Fu</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+    :root{--blue:#0047ab;--text:#273343;--muted:#667180;--line:#d9dfea;--paper:#f6f7fc;--tint:#e9eefb;--control:#6094ed;--ai:#83bf89;--green:#35614c}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;background:#f4f4f4;color:var(--text);font-family:'Source Sans 3',Arial,sans-serif;font-size:16px;line-height:1.65}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}button,a{-webkit-tap-highlight-color:transparent}:focus-visible{outline:3px solid #85a8e3;outline-offset:5px}h1,h2,h3,h4{font-family:Outfit,'Trebuchet MS',Arial,sans-serif;line-height:1.2}p{margin:0 0 16px}h1{font-size:clamp(32px,3.3vw,44px);letter-spacing:-.7px;color:var(--blue);font-weight:700;margin:8px 0 14px}h2{color:var(--blue);font-weight:600;font-size:27px;margin:0 0 20px}h3{font-size:21px;font-weight:600;margin:0 0 12px}h4{font-size:17px;font-weight:500;margin:20px 0 12px}.skip{position:absolute;top:-100px}.skip:focus{top:12px;left:15px;padding:10px;background:white;z-index:30}
+    .site-header{background:white;box-shadow:0 9px 12px #00000016}.site-nav{max-width:1500px;margin:auto;min-height:122px;padding:24px 4%;display:flex;align-items:center;justify-content:space-between;gap:26px;font-family:Outfit,Arial,sans-serif}.brand{font-size:25px;color:#111;letter-spacing:-.6px}.site-links{display:flex;gap:30px;font-size:16px}.site-links a:hover{color:var(--blue)}.resume-button{border:0;border-radius:100px;padding:21px 34px;background:#050505;color:#fff;font-size:16px}.menu-button{display:none;background:none;border:1px solid var(--line);border-radius:5px;padding:8px 12px;color:var(--text)}
+    .case-shell{max-width:1380px;width:92%;margin:42px auto 64px;border-radius:8px;background:var(--paper);padding:24px 16px 36px}.chapter-nav{display:grid;grid-template-columns:.75fr repeat(4,1fr) 1.35fr;gap:6px;margin-bottom:24px;font-family:Outfit,Arial,sans-serif;font-size:13px;line-height:1.3}.chapter-nav a{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:7px;background:#fff;padding:11px 13px;min-height:42px;transition:background .15s}.chapter-nav a:hover{background:var(--tint);color:var(--blue)}.chapter-nav span{font-family:monospace;color:#8792a2}.chapter-nav a[aria-current]{background:var(--blue);color:white;border-color:var(--blue)}
+    .case-layout{display:grid;grid-template-columns:224px minmax(0,1fr);gap:40px}.toc{border-right:1px solid var(--line);align-self:start;position:sticky;top:24px;padding:16px 20px 18px 0;font-family:Outfit,Arial,sans-serif;font-size:14px}.eyebrow{font-family:'Courier New',monospace;font-size:11px;line-height:1.6;letter-spacing:1.7px;text-transform:uppercase;color:var(--muted)}.toc .eyebrow{margin:0 0 10px 14px}.toc ul{list-style:none;padding:0;margin:0}.toc a{display:block;border-left:2px solid transparent;padding:6px 12px}.toc a:hover,.toc a[aria-current="location"]{color:var(--blue);border-left-color:var(--blue);background:#e9eefb60}.toc a[aria-current="location"]{font-weight:600}.main-copy{min-width:0;padding-right:0}.lead{padding:17px 23px;background:var(--tint);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;font-size:17px;line-height:1.65;margin-bottom:24px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 38px}.stat{background:white;border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:9px;padding:16px 15px;box-shadow:0 1px 3px #1b35500a}.stat dt{font-family:'Courier New',monospace;font-size:26px;font-weight:700;color:var(--blue);line-height:1.3;white-space:nowrap}.stat dd{font-size:14px;line-height:1.45;color:var(--muted);margin:6px 0 0}.content-section{border-top:1px solid var(--line);padding:32px 0 4px;margin-top:24px;scroll-margin-top:24px}.questions{padding-left:22px;margin:10px 0 6px}.questions li{padding-left:3px;margin:8px 0}.study-grid{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:20px}.study-grid>div{min-width:0;border-right:1px solid var(--line);padding-right:18px}.study-grid>div:last-child{border:0;padding:0}.study-grid h3{font-size:18px;color:var(--blue)}.study-grid p{font-size:15px;line-height:1.6}.study-grid strong{font-weight:600}.analysis-list{margin:0;padding-left:18px;font-size:15px;line-height:1.7}.finding+.finding{margin-top:34px;border-top:1px solid var(--line);padding-top:28px}.finding-title{display:flex;gap:13px;align-items:baseline}.number{font-family:monospace;color:var(--blue);font-size:13px;letter-spacing:1px;flex-shrink:0}.field-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px 24px;margin:18px 0 24px}.field-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px}.field-stats strong{font-family:'Courier New',monospace;font-size:32px;display:block;color:var(--blue);line-height:1.3}.field-stats span{font-size:14px;color:var(--muted)}.note{font-size:13px;line-height:1.55;color:var(--muted);margin:14px 0 0}.bar-chart{margin:16px 0 22px;background:white;border:1px solid var(--line);border-radius:8px;padding:24px}.figure-title{font-family:Outfit,Arial,sans-serif;font-size:18px;font-weight:500;line-height:1.35;margin-bottom:6px}.figure-subtitle{font-size:14px;color:var(--muted);margin:0 0 20px}.horizontal-row{display:grid;grid-template-columns:160px 1fr 56px;gap:16px;align-items:center;margin:16px 0;font-size:14px}.track{height:27px;background:#f1f3f7;border-radius:4px;overflow:hidden}.fill{display:block;height:100%;border-radius:4px;background:var(--control)}.fill.ai{background:var(--ai)}.horizontal-row strong{font-family:monospace;color:var(--text);font-size:16px}.chart-axis{display:flex;justify-content:space-between;margin:0 72px 0 176px;color:var(--muted);font:11px monospace}.legend{display:flex;justify-content:flex-end;gap:18px;font-size:13px;align-items:center;margin:4px 0 16px}.legend span{display:flex;align-items:center;gap:7px}.swatch{width:11px;height:11px;border-radius:3px;background:var(--control)}.swatch.ai{background:var(--ai)}.chart-svg{display:block;width:100%;height:auto;overflow:visible}.chart-svg text{font-family:'Source Sans 3',Arial,sans-serif;fill:var(--muted);font-size:14px}.chart-svg .value{fill:var(--text);font-size:16px;font-weight:600}.chart-svg .group-label{fill:var(--text);font-size:15px}.chart-svg .grid{stroke:#e1e6ef;stroke-dasharray:3 4}.chart-svg .baseline{stroke:#b5c1d3}.chart-svg .control-bar{fill:var(--control)}.chart-svg .ai-bar{fill:var(--ai)}.data-table{margin-top:14px;font-size:13px}.data-table summary{cursor:pointer;color:var(--blue);width:max-content}.data-table table{border-collapse:collapse;width:100%;margin-top:12px;text-align:left;font-size:13px}.data-table th,.data-table td{border-bottom:1px solid var(--line);padding:8px}.data-table th{font-weight:600}.data-table .source{display:inline-block;margin-top:10px;text-decoration:underline;color:var(--muted)}
+    .recommendation{display:grid;grid-template-columns:30px 1fr;gap:14px;margin:26px 0}.recommendation h3{font-size:20px}.recommendation p:last-child{margin-bottom:0}.tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:12px}.tag{font-size:13px;line-height:1.3;padding:8px 12px;border:1px solid var(--line);background:white;border-radius:5px}.chapter-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}.chapter{padding:20px;border:1px solid var(--line);border-radius:8px;background:#fff;scroll-margin-top:24px}.chapter:target{border-color:var(--blue);box-shadow:0 0 0 2px #0047ab12}.chapter .eyebrow{color:var(--blue)}.chapter h3{font-size:19px;margin:9px 0}.chapter p{font-size:14px;line-height:1.5;color:var(--muted);margin:0}.chapter-status{font-size:10px;letter-spacing:.7px;text-transform:uppercase;color:#6b7788;float:right}.back-link{border-top:1px solid var(--line);padding:23px 0 2px;margin-top:28px;font-family:Outfit,Arial,sans-serif;color:var(--blue);font-size:14px}.back-link a:hover{text-decoration:underline}.footer{background:white;border-top:1px solid var(--line);padding:45px 4%;display:flex;justify-content:space-between;gap:30px;font-size:14px;color:var(--muted)}.footer strong{font-family:Outfit,Arial,sans-serif;display:block;font-size:22px;font-weight:500;color:#151d29}.footer a:hover{color:var(--blue)}
+    dialog{border:1px solid var(--line);border-radius:10px;width:calc(100% - 32px);max-width:650px;padding:36px;max-height:88vh;color:var(--text);background:white}dialog::backdrop{background:#14243885;backdrop-filter:blur(4px)}dialog h2{margin:20px 0}dialog h3{margin-top:24px;font-size:19px}.close{float:right;border:1px solid var(--line);background:white;border-radius:50%;width:34px;height:34px}
+    @media(min-width:1450px){.main-copy{padding-right:8px}.case-layout{grid-template-columns:235px minmax(0,1fr);gap:42px}}
+    @media(max-width:1100px){.case-layout{grid-template-columns:180px minmax(0,1fr);gap:26px}.stats{gap:8px}.stat{padding:13px 10px}.stat dt{font-size:22px}.chapter-nav{grid-template-columns:repeat(4,minmax(0,1fr))}.study-grid{gap:14px}}
+    @media(max-width:800px){.site-nav{min-height:90px;padding:20px 5%;gap:16px}.site-links{gap:20px}.resume-button{padding:13px 22px;font-size:14px}.brand{font-size:22px}.case-shell{width:94%;margin:26px auto 40px;padding:16px}.case-layout{display:block}.toc{position:static;border:1px solid var(--line);border-radius:7px;padding:12px;background:white;margin:0 0 24px}.toc .eyebrow{margin:0 0 8px 0}.toc ul{display:flex;flex-wrap:wrap;gap:4px 12px}.toc a{padding:4px 0;border-left:0;border-bottom:2px solid transparent;font-size:12px}.toc a[aria-current="location"]{border-left:0;border-bottom-color:var(--blue)}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat dt{font-size:25px}.study-grid{gap:20px}.chapter-nav{font-size:12px}.chapter-nav a{padding:9px 10px}.footer{flex-wrap:wrap}.content-section{padding-top:27px}.lead{font-size:16px}}
+    @media(max-width:560px){.site-nav{flex-wrap:wrap;gap:12px;min-height:82px}.brand{margin-right:auto}.resume-button{padding:11px 18px}.menu-button{display:block}.site-links{display:none;order:5;flex-basis:100%;justify-content:space-between;padding-top:12px;border-top:1px solid var(--line)}.site-links.open{display:flex}.case-shell{width:96%;padding:12px;margin-top:20px}.chapter-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-bottom:18px}.chapter-nav a:first-child{grid-column:1/-1}.toc{margin-bottom:22px}.eyebrow{font-size:10px;letter-spacing:1.4px}h1{font-size:32px;line-height:1.15;letter-spacing:-.6px}h2{font-size:25px}h3{font-size:20px}.lead{padding:14px 16px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat dt{font-size:24px}.stat dd{font-size:13px}.study-grid{grid-template-columns:1fr}.study-grid>div{border-right:0;border-bottom:1px solid var(--line);padding:0 0 10px}.study-grid p{font-size:16px}.analysis-list{font-size:16px}.bar-chart{padding:17px 12px}.horizontal-row{grid-template-columns:115px 1fr 45px;gap:8px;font-size:12px}.chart-axis{margin:0 53px 0 123px}.horizontal-row strong{font-size:13px}.track{height:23px}.figure-title{font-size:17px}.chart-svg text{font-size:16px}.chart-svg .group-label{font-size:17px}.chart-svg .value{font-size:18px}.legend{font-size:12px}.field-box{padding:18px}.field-stats{gap:12px}.field-stats strong{font-size:28px}.finding-title{gap:9px}.chapter-grid{grid-template-columns:1fr}.recommendation{gap:9px;grid-template-columns:24px 1fr}.footer{padding:30px 5%;font-size:13px}.footer strong{font-size:21px}.footer>div:first-child{flex-basis:100%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+    @media print{body{background:white}.site-header,.chapter-nav,.toc,.back-link,dialog,.menu-button{display:none}.case-shell{width:100%;margin:0;padding:0;background:white}.case-layout{display:block}.bar-chart,.stat,.chapter{break-inside:avoid}.footer{padding:20px 0}a{color:inherit}.content-section{break-inside:auto}}
+  
+    .chapter-nav a[aria-current] span{color:#dce8ff}.page-subtitle{font-size:19px;color:var(--muted);margin-bottom:22px}.central-question{background:var(--tint);border-left:4px solid var(--blue);padding:22px 24px;border-radius:0 8px 8px 0;margin:24px 0}.central-question .eyebrow{color:var(--blue);margin-bottom:10px}.central-question p{font-family:Outfit,Arial,sans-serif;font-size:22px;line-height:1.45;margin:0}.section-number{font-family:monospace;font-size:13px;font-weight:400;display:block;letter-spacing:2px;color:var(--muted);margin-bottom:8px}.context-copy h3{font-size:19px;margin-top:24px}.stakeholders{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:26px 0;border-block:1px solid var(--line)}.stakeholders>div{padding:22px 20px}.stakeholders>div+div{border-left:1px solid var(--line)}.stakeholders h3{color:var(--blue);margin:6px 0;font-size:21px}.stakeholders p{margin:0;color:var(--muted)}.market-stats{margin:20px 0 0}.market-stats dd{min-height:42px}.decision-pair{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:22px 0}.decision-pair>div{padding:22px;background:white;border:1px solid var(--line);border-radius:8px}.decision-pair h3{font-size:19px;color:var(--blue)}.decision-pair p:last-child{margin:0}.decision-question{font-weight:600}.flow{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:24px 0}.flow li{position:relative;padding:16px 12px 16px 0;border-top:3px solid var(--blue)}.flow li:not(:last-child)::after{content:'→';position:absolute;right:-15px;top:12px;color:var(--blue)}.flow h4{margin:0 0 10px;font-size:16px}.flow p{font-size:14px;line-height:1.55;margin:0}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:white;margin-top:20px}.criteria-table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.6;text-align:left}.criteria-table caption{text-align:left;padding:14px 18px;color:var(--muted);font-size:13px}.criteria-table th,.criteria-table td{padding:17px 18px;vertical-align:top;border-top:1px solid var(--line)}.criteria-table thead th{background:var(--tint);font-family:Outfit,Arial,sans-serif;color:var(--blue);font-weight:500}.criteria-table tbody th{width:24%;font-weight:600}.priority-list{counter-reset:priority;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.priority-list li{border-top:1px solid var(--line);padding:24px 0;counter-increment:priority}.priority-list li::before{content:'0' counter(priority);font-family:monospace;color:var(--blue);font-size:14px;display:block;margin-bottom:12px}.priority-list h3{font-size:21px}.key-question{font-size:15px;color:var(--blue);border-left:2px solid var(--line);padding-left:14px;margin:18px 0 0}.scope-columns{display:grid;grid-template-columns:1fr 1fr;gap:28px}.scope-columns h3{font-size:20px;border-bottom:2px solid var(--line);padding-bottom:12px}.scope-columns ul{padding-left:20px;margin:0}.scope-columns li{margin:10px 0}.boundary{padding:20px 24px;background:var(--tint);border-radius:8px;margin-top:28px}.boundary h3{font-size:18px}.boundary p{margin:0;font-size:15px}.process-list{list-style:none;margin:24px 0;padding:0}.process-list li{display:grid;grid-template-columns:38px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}.process-list .number{padding-top:3px}.process-list h3{font-size:18px;margin-bottom:5px}.process-list p{margin:0;font-size:15px;color:var(--muted)}.process-list li:first-child h3{color:var(--blue)}.next-step{display:block;padding:24px;border:1px solid var(--line);border-radius:8px;background:white;margin-top:28px}.next-step:hover{border-color:var(--blue)}.next-step h3{color:var(--blue);margin:10px 0}.next-step p{margin:0}.next-step .note{margin-top:12px}.page-links{display:flex;justify-content:space-between;gap:20px}.chapter a:hover h3{color:var(--blue)}@media(max-width:1000px){.flow{grid-template-columns:1fr 1fr}.flow li:nth-child(2)::after{content:none}}@media(max-width:560px){.decision-pair,.priority-list,.scope-columns{grid-template-columns:1fr}.central-question{padding:18px}.central-question p{font-size:20px}.stakeholders>div{padding:18px 10px}.stakeholders h3{font-size:19px}.stakeholders p{font-size:14px}.criteria-table{min-width:640px}.flow{grid-template-columns:1fr;gap:18px}.flow li:not(:last-child)::after{content:'↓';top:auto;bottom:-20px;right:50%}.page-links{flex-direction:column}.next-step{padding:20px}}
+
+  
+    .approach-section>h3{margin:32px 0 14px;font-size:23px}.approach-section>h4{font-size:18px;font-weight:600;margin-top:24px}.approach-section>ul{padding-left:22px}.approach-section li{margin-bottom:7px}.approach-section .criteria-table{margin-bottom:0}.approach-section .table-wrap{margin-bottom:28px}.approach-section .criteria-table tbody th{width:28%}.concept-model{margin:32px 0 8px;background:white;padding:26px;border:1px solid var(--line);border-radius:8px}.concept-model figcaption{font:600 23px Outfit,Arial,sans-serif;color:var(--blue)}.model-path{list-style:none;display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:28px;margin:26px 0;padding:0}.model-path>li{position:relative;border-top:3px solid var(--blue);padding:18px 0 0}.model-path>li:not(:last-child)::after{content:'→';position:absolute;right:-22px;top:39px;color:var(--blue)}.model-path h4{font-size:18px;font-weight:600;line-height:1.4;margin:10px 0}.model-path ul{padding-left:18px;font-size:14px}.moderator{border-left:3px solid var(--blue);background:var(--tint);padding:18px 22px}.moderator h4{margin:6px 0 10px;font-size:19px}.moderator p{margin:0;font-size:15px}.measurement-path{display:flex;flex-wrap:wrap;gap:12px 24px;padding:18px 0;margin-bottom:18px;color:var(--blue);font:14px Outfit,Arial,sans-serif}.measurement-path span:not(:last-child)::after{content:'→';margin-left:20px}.objective{padding:26px 0;border-top:1px solid var(--line)}.objective h3{font-size:23px;color:var(--blue);margin:0 0 18px}.objective-body h4{font-size:16px;font-weight:600;margin:24px 0 8px}.objective-body>p:first-child{background:var(--tint);border-radius:6px;padding:15px 18px}.objective-body ul{padding-left:22px}.objective-body p:last-child{margin-bottom:0}#project-plan>h4{padding-top:16px;border-top:1px solid var(--line)}#approach-overview{margin-top:0;padding-top:24px}#approach-summary{margin-bottom:24px}@media(max-width:800px){.model-path{grid-template-columns:1fr;gap:28px}.model-path>li:not(:last-child)::after{content:'↓';top:auto;right:50%;bottom:-25px}.model-path>li{padding-top:12px}.concept-model{padding:20px}.measurement-path{gap:12px;font-size:13px}.measurement-path span:not(:last-child)::after{margin-left:12px}}@media print{.concept-model,.objective{break-inside:avoid}}
+  
+    .design-section>h3{padding-top:20px;border-top:1px solid var(--line);margin-top:32px}.design-section>h4{font-weight:600;font-size:17px;margin-top:24px}.design-section ul,.design-section ol{padding-left:22px}.design-section>p strong{color:var(--blue)}.question-preview{padding:24px;margin:22px 0;background:white;border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:8px}.question-preview h4{font-size:16px;font-weight:600;margin:20px 0 10px}.question-preview .measurement-heading{font-size:21px;color:var(--blue);margin:0 0 22px}.question-preview p:last-child{margin-bottom:0}.survey-sequence{list-style:none!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:0!important;counter-reset:survey;margin:24px 0}.survey-sequence li{counter-increment:survey;border-top:2px solid var(--blue);padding:12px 8px;background:var(--tint);font:14px Outfit,Arial,sans-serif}.survey-sequence li::before{content:'0' counter(survey);display:block;font:12px monospace;color:var(--blue);margin-bottom:8px}#design-introduction{margin-top:0;padding-top:24px}.design-section .criteria-table tbody th{width:27%}@media(max-width:560px){.question-preview{padding:18px}.survey-sequence{grid-template-columns:1fr 1fr}}@media print{.question-preview{break-inside:avoid}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#research-design">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="brand" href="index.html#home">Yuxin Fu</a>
+      <div class="site-links" id="site-links"><a href="index.html#home">Home</a><a href="index.html#projects">Projects</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></div>
+      <button class="resume-button" type="button" id="open-resume">Resume</button>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-links" aria-label="Open navigation">Menu</button>
+    </nav>
+  </header>
+  <main class="case-shell">
+    <nav class="chapter-nav" aria-label="Case study overview and chapter previews">
+      <a href="ai-review-summaries-overview.html">Overview</a>
+      <a href="ai-review-summaries-problem-definition.html" aria-label="Step 1: Problem definition"><span>1</span>Problem definition</a>
+      <a href="ai-review-summaries-approach.html" aria-label="Step 2: Approach"><span>2</span>Approach</a>
+      <a href="#research-design" aria-current="page" aria-label="Step 3: Research design"><span>3</span>Research design</a>
+      <a href="ai-review-summaries-overview.html#step-4" aria-label="Step 4: Analysis — chapter preview"><span>4</span>Analysis</a>
+      <a href="ai-review-summaries-overview.html#step-5" aria-label="Step 5: Insights and recommendations — chapter preview"><span>5</span>Insights &amp; recommendations</a>
+    </nav>
+    <div class="case-layout">
+      <aside class="toc" aria-label="On this page">
+        <div class="eyebrow">On this page</div>
+        <ul><li><a href="#design-introduction" aria-current="location">Design overview</a></li><li><a href="#methodology">Field methodology</a></li><li><a href="#experiments">Experimental design</a></li><li><a href="#sampling">Sampling strategy</a></li><li><a href="#questionnaire">Questionnaire design</a></li><li><a href="#quality">Quality & limitations</a></li><li><a href="#design-summary">Design summary</a></li></ul>
+      </aside>
+
+      <article class="main-copy" id="research-design" tabindex="-1"><div class="eyebrow">AI-generated review summaries · Step 3 of 5</div><h1>Research Design</h1><p class="page-subtitle">From research framework to data collection: combining real-world platform behaviour with controlled experiments.</p><section class="content-section approach-section design-section" id="design-introduction" aria-labelledby="design-introduction-title"><h2 id="design-introduction-title"><span class="section-number">01</span>Introduction to Research Design</h2>
+<p>This research employs a multi-method quantitative design combining a quasi-experimental field study with three preregistered online experiments.</p>
+<p>The field study uses actual consumer review data from TripAdvisor and Expedia to investigate whether the introduction of AI-generated review summaries (AIGS) affects review contribution behaviour.</p>
+<p>The experimental studies complement this observational evidence by manipulating the presence of AI summaries in controlled review environments. They investigate whether AI summaries affect consumers' willingness to leave reviews, the effort they intend to invest in writing, and their anticipated recognition from other readers.</p>
+<p>A final experiment examines whether highlighting reader engagement can mitigate these effects.</p>
+<h3>Research Design Overview</h3>
+<div class="table-wrap" role="region" aria-label="Research design table" tabindex="0"><table class="criteria-table"><thead><tr><th scope="col">Component</th><th scope="col">Design</th><th scope="col">Purpose</th></tr></thead><tbody><tr><th scope="row">Study 1</th><td>Cross-platform difference-in-differences</td><td>Examine actual review contributions</td></tr><tr><th scope="row">Study 2a</th><td>Two-condition randomized experiment</td><td>Test review-writing responses and anticipated recognition in a service context</td></tr><tr><th scope="row">Study 2b</th><td>Two-condition randomized experiment</td><td>Replicate the mechanism in a product context</td></tr><tr><th scope="row">Study 3</th><td>2 × 2 randomized factorial experiment</td><td>Test the moderating role of highlighted reader engagement</td></tr></tbody></table></div>
+<p>By combining behavioural evidence with randomized experiments, the research provides complementary perspectives on how AI-powered platform features influence consumer participation.</p>
+</section>
+<section class="content-section approach-section design-section" id="methodology" aria-labelledby="methodology-title"><h2 id="methodology-title"><span class="section-number">02</span>Research Methodology</h2>
+<h3>Study 1 — Quasi-Experimental Field Study</h3>
+<h4>Research objective</h4>
+<p>Determine whether introducing AI-generated review summaries changes the quantity of consumer reviews and the amount of text produced.</p>
+<h4>Natural Experiment</h4>
+<p>On October 25, 2023, TripAdvisor introduced AI-generated review summaries on eligible hotel pages.</p>
+<p>Expedia, which features reviews of many of the same hotels, did not introduce its own AI summaries until May 2024.</p>
+<p>This difference in implementation timing creates an opportunity to compare review-writing activity across platforms before and after TripAdvisor introduced the feature.</p>
+<h3>Study Design</h3>
+<h4>Treatment Platform: TripAdvisor</h4>
+<p>AI-generated summaries were introduced on eligible hotel pages on October 25, 2023.</p>
+<h4>Comparison Platform: Expedia</h4>
+<p>The same hotels were observed on a platform that had not yet introduced AI-generated summaries during the study window.</p>
+<h4>Observation Period</h4>
+<p>July 7, 2023 – May 13, 2024</p>
+<ul><li>Pre-intervention: 110 days</li><li>Post-intervention: 202 days</li></ul><h4>Analytical Approach</h4>
+<p>A difference-in-differences (DID) design compares changes in review activity on TripAdvisor against corresponding changes on Expedia for matched hotels.</p>
+<p>Using the same hotels across both platforms helps account for hotel-specific conditions that may affect consumer reviewing, such as seasonal demand, local events, or renovations.</p>
+<h3>Dataset Construction</h3>
+<p>The research collected review histories from hotels in five U.S. leisure destinations:</p>
+<ul><li>Santa Barbara, California</li><li>Scottsdale, Arizona</li><li>Charleston, South Carolina</li><li>Savannah, Georgia</li><li>San Antonio, Texas</li></ul><p>Hotel listings were matched across the two platforms using hotel names, geographic locations, street addresses, and hotel characteristics.</p>
+<p>The full matching process identified 723 verified hotel pairs.</p>
+<p>The primary analytical sample was constructed by retaining hotels with at least 30 English-language TripAdvisor reviews during the 12 months preceding the observation window.</p>
+<h3>Main Field Sample</h3>
+<div class="table-wrap" role="region" aria-label="Research design table" tabindex="0"><table class="criteria-table"><thead><tr><th scope="col">Dataset Characteristic</th><th scope="col">Actual Value</th></tr></thead><tbody><tr><th scope="row">Verified hotel pairs in the broader dataset</th><td>723</td></tr><tr><th scope="row">Hotels in the primary analytical sample</th><td>188</td></tr><tr><th scope="row">Hotels displaying AI summaries</th><td>126</td></tr><tr><th scope="row">Reviews in the primary observation sample</th><td>42,274</td></tr><tr><th scope="row">Observation period</th><td>312 days</td></tr><tr><th scope="row">Platforms</th><td>2</td></tr><tr><th scope="row">Hotel × platform × day observations</th><td>117,312</td></tr></tbody></table></div>
+<h3>Key Variables</h3>
+<h4>Independent Variable</h4>
+<p>The interaction between the TripAdvisor platform indicator and the post-introduction period.</p>
+<h4>Dependent Variables</h4>
+<ol><li>Review volume: log(1 + number of text reviews posted per hotel, platform, and day).</li><li>Text production: log(1 + total review words posted per hotel, platform, and day).</li></ol><h4>Model Controls</h4>
+<ul><li>Hotel × platform fixed effects.</li><li>City × day fixed effects.</li><li>Standard errors clustered at the hotel level.</li></ul><h3>Research Design Logic</h3>
+<p>The analysis focuses on whether the gap in review contributions between TripAdvisor and Expedia changes following the introduction of AI summaries.</p>
+<p>The design also includes event-time analysis and robustness checks to evaluate the stability of the estimated relationship.</p>
+</section>
+<section class="content-section approach-section design-section" id="experiments" aria-labelledby="experiments-title"><h2 id="experiments-title"><span class="section-number">03</span>Experimental Design</h2>
+<p>To complement real-world observational evidence, the project uses controlled online experiments to examine the psychological drivers of review-writing behaviour.</p>
+<p>Participants were recruited through Prolific and completed the studies using Qualtrics.</p>
+<h3>Study 2a — Service Context</h3>
+<h4>Research objective</h4>
+<p>Examine whether the presence of AI-generated summaries affects willingness to leave reviews, intended writing effort, and anticipated recognition.</p>
+<h4>Scenario</h4>
+<p>Participants were asked to imagine that they had recently visited a restaurant and were considering leaving an online review.</p>
+<p>They were randomly assigned to one of two versions of a review webpage.</p>
+<div class="table-wrap" role="region" aria-label="Research design table" tabindex="0"><table class="criteria-table"><thead><tr><th scope="col">Control Group</th><th scope="col">Experimental Group</th></tr></thead><tbody><tr><th scope="row">Human-written customer reviews</th><td>AI-generated summary plus individual customer reviews</td></tr><tr><th scope="row">The first review was attributed to a consumer</th><td>The same information was presented as an AI-generated summary</td></tr><tr><th scope="row">No AI summary was displayed</th><td>The AI summary appeared prominently above individual reviews</td></tr></tbody></table></div>
+<p>Importantly, the content of the first review was held constant across conditions. The key manipulation was whether the information was presented as an individual human review or an AI-generated summary.</p>
+<p><strong>Final sample:</strong> N = 402</p>
+<h4>Key outcomes</h4>
+<ul><li>Willingness to leave a review.</li><li>Intended writing effort.</li><li>Anticipated review helpfulness.</li><li>Anticipated social recognition.</li></ul><p>This design tests whether the presentation of review information affects potential contributors' expectations and behavioural intentions.</p>
+<h3>Study 2b — Product Context</h3>
+<h4>Research objective</h4>
+<p>Examine whether the relationships investigated in Study 2a extend beyond service experiences to physical products.</p>
+<p>Study 2b replicated the basic experimental design of Study 2a, replacing the restaurant scenario with a coffee machine.</p>
+<p>Participants again encountered either individual human-written reviews or an AI-generated summary presented alongside individual reviews.</p>
+<p><strong>Final sample:</strong> N = 399</p>
+<p><strong>Design:</strong> AI summary present versus absent.</p>
+<p><strong>Measurements:</strong> The same principal review-writing and recognition measures as Study 2a.</p>
+<p>Using a physical product provides an opportunity to examine whether the proposed effects are consistent across service and product review contexts.</p>
+<h3>Study 3 — Reader Engagement Intervention</h3>
+<h4>Research objective</h4>
+<p>Evaluate whether highlighting engagement with individual reviews can mitigate the effects associated with AI-generated summaries.</p>
+<h4>Scenario</h4>
+<p>Participants imagined visiting a coffee shop and considering leaving an online review.</p>
+<h4>Experimental Design</h4>
+<p>A 2 × 2 between-subjects factorial design:</p>
+<ul><li>Factor 1: AI-generated summary present versus absent.</li><li>Factor 2: Highlighted reader engagement present versus absent.</li></ul><h4>Four Experimental Conditions</h4>
+<div class="table-wrap" role="region" aria-label="Research design table" tabindex="0"><table class="criteria-table"><thead><tr><th scope="col">AI summary condition</th><th scope="col">No Engagement Highlight</th><th scope="col">Engagement Highlight</th></tr></thead><tbody><tr><th scope="row">No AI Summary</th><td>Condition 1: Human reviews without highlighted reader engagement</td><td>Condition 2: Human reviews with highlighted reader engagement</td></tr><tr><th scope="row">AI Summary</th><td>Condition 3: AI summary without highlighted reader engagement</td><td>Condition 4: AI summary with highlighted reader engagement</td></tr></tbody></table></div>
+<h4>Reader Engagement Manipulation</h4>
+<p>In the engagement-highlight conditions, participants were informed that the platform encouraged interaction with individual customer reviews.</p>
+<p>The scenario featured visible reader-response indicators, including an example of a review receiving 568 top-comment votes and another receiving more than 100 comments.</p>
+<p>These numbers were elements of the experimental scenario, not observed platform engagement statistics.</p>
+<p><strong>Final sample:</strong> N = 624</p>
+<h4>Key outcomes</h4>
+<ul><li>Willingness to leave a review.</li><li>Intended writing effort.</li><li>Anticipated review helpfulness.</li></ul><p>The study evaluates whether highlighting reader engagement changes the relationship between AI summaries and anticipated recognition, as well as the associated review-writing outcomes.</p>
+</section>
+<section class="content-section approach-section design-section" id="sampling" aria-labelledby="sampling-title"><h2 id="sampling-title"><span class="section-number">04</span>Sampling Strategy</h2>
+<h3>Field Study Sampling</h3>
+<p>The field study employs purposive selection of review-active hotel markets, followed by cross-platform matching and eligibility screening.</p>
+<p>The five study destinations were chosen to provide hotels with sufficient review activity, variation across leisure markets, and reliable matching opportunities between TripAdvisor and Expedia.</p>
+<p>The primary sample excludes hotels that do not meet the minimum recent-review threshold, consistent with TripAdvisor's review-volume-related eligibility criteria for AI summaries.</p>
+<p><strong>Main sample:</strong> 188 hotels.</p>
+<p><strong>Broader robustness sample:</strong> 638 matched hotels with at least one text review during the study window.</p>
+<h3>Experimental Sampling</h3>
+<p>The experimental component uses online participants recruited through Prolific.</p>
+<p>Participants were allocated to controlled review environments, and the final experimental samples were analysed using the same core outcome measures across conditions.</p>
+<h3>Participant Profile</h3>
+<div class="table-wrap" role="region" aria-label="Research design table" tabindex="0"><table class="criteria-table"><thead><tr><th scope="col">Study</th><th scope="col">N</th><th scope="col">Mean Age</th><th scope="col">Female</th></tr></thead><tbody><tr><th scope="row">Study 2a — Restaurant</th><td>402</td><td>43.7</td><td>50.0%</td></tr><tr><th scope="row">Study 2b — Coffee Machine</th><td>399</td><td>42.1</td><td>49.4%</td></tr><tr><th scope="row">Study 3 — Coffee Shop</th><td>624</td><td>39.5</td><td>46.6%</td></tr><tr><th scope="row"><strong>Total</strong></th><td><strong>1,425</strong></td><td>—</td><td>—</td></tr></tbody></table></div>
+<p>These are the reported analytical samples. The research does not claim demographic representativeness of a national population or the use of commercial survey quotas.</p>
+<h3>Sample Quality Control</h3>
+<p>Participants were required to complete the study and pass a predetermined attention check.</p>
+<p>The main experiments used an instructional attention-check item asking participants to select response option 6.</p>
+<p>The reported attention-check exclusions were:</p>
+<ul><li>Study 2a: 4 participants.</li><li>Study 2b: 2 participants.</li><li>Study 3: 3 participants.</li></ul><p>Further quality and validity checks were conducted using manipulation checks and supplementary analyses.</p>
+</section>
+<section class="content-section approach-section design-section" id="questionnaire" aria-labelledby="questionnaire-title"><h2 id="questionnaire-title"><span class="section-number">05</span>Questionnaire Design</h2>
+<p>The online experimental questionnaires were designed to measure review-writing intentions and anticipated recognition after exposure to an assigned review environment.</p>
+<p>The structure followed a common sequence:</p>
+<ol class="survey-sequence" aria-label="Questionnaire sequence"><li>Consent</li><li>Scenario</li><li>Review Environment</li><li>Outcome Measures</li><li>Recognition Measures</li><li>Checks & Respondent Information</li></ol>
+<h3>Questionnaire Architecture</h3>
+<div class="table-wrap" role="region" aria-label="Research design table" tabindex="0"><table class="criteria-table"><thead><tr><th scope="col">Section</th><th scope="col">Purpose</th><th scope="col">Key Measures</th></tr></thead><tbody><tr><th scope="row">A. Consent and Introduction</th><td>Explain participation and obtain informed consent</td><td>Consent confirmation</td></tr><tr><th scope="row">B. Review Scenario</th><td>Establish the consumption situation and assigned experimental treatment</td><td>Restaurant, product, or coffee shop scenario; AI summary and engagement conditions</td></tr><tr><th scope="row">C. Review-Writing Behaviour</th><td>Assess consumers' motivation to contribute</td><td>Willingness to leave a review; writing effort</td></tr><tr><th scope="row">D. Anticipated Recognition</th><td>Measure expected acknowledgment from other readers</td><td>Helpfulness, usefulness, informativeness, and social appreciation</td></tr><tr><th scope="row">E. Validation and Respondent Information</th><td>Evaluate attention, manipulation comprehension, and participant characteristics</td><td>Attention check, manipulation check, demographics</td></tr></tbody></table></div>
+<h3>Questionnaire Preview — Actual Measurement Items</h3>
+<div class="question-preview"><h4 class="measurement-heading">Section C1. Willingness to Leave a Review</h4>
+<h4>Question</h4>
+<p>"Please indicate your willingness to write a review about the restaurant on this website."</p>
+<p><strong>Response scale:</strong> 1 = Not interested at all; 7 = Extremely interested.</p>
+<p><em>The product and coffee shop experiments adapted the scenario wording accordingly.</em></p>
+</div><div class="question-preview"><h4 class="measurement-heading">Section C2. Review-Writing Effort</h4>
+<h4>Question stem</h4>
+<p>"If you were to leave a review on this website..."</p>
+<p>Participants evaluated three items:</p>
+<ol><li>How much effort would you put into writing the review?</li><li>How much thought would you give to the review when writing it?</li><li>How much time would you spend writing the review?</li></ol><p><strong>Response scale:</strong> 1 = Not at all; 7 = Very much.</p>
+<p>The three items were combined to form a composite measure of intended writing effort.</p>
+</div><div class="question-preview"><h4 class="measurement-heading">Section D1. Anticipated Review Helpfulness</h4>
+<h4>Question</h4>
+<p>"If you were to leave a review on this website, to what extent would you expect other people to find your review:"</p>
+<ul><li>Useful</li><li>Informative</li><li>Helpful</li></ul><p><strong>Response scale:</strong> 1 = Not at all; 7 = Very much.</p>
+<p>This measure captures whether potential contributors anticipate their reviews being valuable to other consumers.</p>
+</div><div class="question-preview"><h4 class="measurement-heading">Section D2. Anticipated Social Recognition</h4>
+<h4>Question stem</h4>
+<p>"If you were to leave a review on this website, you would expect that:"</p>
+<ul><li>Many people would read your review.</li><li>Other people would appreciate what you write.</li><li>Other people would read what you write carefully.</li><li>Your contribution would matter a lot to other people.</li></ul><p><strong>Response scale:</strong> 1 = Strongly disagree; 7 = Strongly agree.</p>
+<p>This broader operationalization was included in Studies 2a and 2b. Study 3 retained anticipated review helpfulness as its measure of recognition rather than collecting this alternative social-recognition measure.</p>
+</div><div class="question-preview"><h4 class="measurement-heading">Section E. Manipulation and Attention Checks</h4>
+<p>The experimental questionnaires included checks to determine whether participants understood the assigned review environment.</p>
+<p>For Studies 2a and 2b, participants were asked whether the review webpage contained an AI-generated summary.</p>
+<p>An attention-check item instructed participants to select response option 6.</p>
+<p>In addition, a separate pretest of Study 3's experimental manipulations assessed whether participants perceived the intended differences in AI-summary presence and highlighted reader engagement.</p>
+</div><h3>Questionnaire Design Principles</h3>
+<h4>Random Assignment</h4>
+<p>Experimental conditions were manipulated to support comparisons between review environments.</p>
+<h4>Consistent Measurement</h4>
+<p>The principal outcome measures were administered across conditions to support comparable analyses.</p>
+<h4>Controlled Information</h4>
+<p>Study 2a and its replication controlled the informational content of the manipulated review presentation.</p>
+<h4>Multiple-Item Measurement</h4>
+<p>Writing effort and anticipated recognition were measured using multi-item constructs, improving measurement reliability relative to single-item alternatives.</p>
+<h4>Validation</h4>
+<p>Manipulation checks, attention checks, and additional validity analyses provided evidence relevant to interpreting the experimental findings.</p>
+</section>
+<section class="content-section approach-section design-section" id="quality" aria-labelledby="quality-title"><h2 id="quality-title"><span class="section-number">06</span>Research Quality and Design Limitations</h2>
+<h3>Manipulation Validation</h3>
+<p>The studies included procedures to evaluate whether participants noticed the experimental treatments.</p>
+<p>Studies 2a and 2b used direct checks of AI-summary presence.</p>
+<p>A separate pretest with 101 participants examined the two manipulated factors in Study 3: AI-summary availability and highlighting reader engagement.</p>
+<h3>Data Preparation and Reproducibility</h3>
+<p>The accompanying research materials document the preparation and analysis of the datasets.</p>
+<h4>Field Data Resources</h4>
+<ul><li>Matched hotel-listing files.</li><li>TripAdvisor review datasets.</li><li>Expedia review datasets.</li><li>R Markdown replication code.</li><li>Main estimates, event-study analysis, and robustness checks.</li></ul><h4>Experimental Data Resources</h4>
+<ul><li>Original Qualtrics questionnaires.</li><li>Raw experimental datasets.</li><li>Data-cleaning scripts.</li><li>Cleaned analytical datasets.</li><li>SPSS results files.</li><li>Supplemental study materials.</li></ul><p>These resources support a transparent workflow from original data to statistical analysis and research reporting.</p>
+<h3>Design Limitations</h3>
+<h4>Observational Identification</h4>
+<p>Study 1 relies on the assumptions of the difference-in-differences design, including parallel trends and the absence of relevant spillovers. Cross-platform comparisons may not eliminate all platform-specific changes.</p>
+<h4>Experimental Generalizability</h4>
+<p>The experiments use hypothetical review-writing scenarios and self-reported behavioural intentions and effort rather than observing all participants making real-world review contributions.</p>
+<h4>Mechanism Interpretation</h4>
+<p>Mediation analyses assess statistical indirect effects consistent with the proposed role of anticipated recognition. They do not independently establish definitive causal mediation.</p>
+<h4>Sampling Boundaries</h4>
+<p>The field study concentrates on selected U.S. hotel markets, while the experiments recruit online participants. Findings should therefore be generalized to other populations, products, and platforms with appropriate caution.</p>
+</section>
+<section class="content-section approach-section design-section" id="design-summary" aria-labelledby="design-summary-title"><h2 id="design-summary-title"><span class="section-number">07</span>Research Design Summary</h2>
+<p>The research design integrates a real-world platform comparison with three preregistered online experiments.</p>
+<p>The field study measures actual review contributions following the introduction of AI-generated summaries. The experiments evaluate review-writing intentions, the psychological role of anticipated recognition, and the potential moderating effect of highlighting reader engagement.</p>
+<p>Together, these complementary methods establish a structured basis for examining both the behavioural and psychological consequences of AI-powered review summarisation.</p>
+<a class="next-step" href="ai-review-summaries-overview.html#step-4"><div class="eyebrow">Next step · Chapter in preparation</div><h3>Step 4 — Analysis →</h3><p>View the chapter preview</p></a>
+<p>The next stage examines the field and experimental evidence, including condition comparisons, indirect effects, and robustness analyses.</p>
+</section><div class="back-link page-links"><a href="ai-review-summaries-approach.html">← Previous: Approach</a><a href="ai-review-summaries-overview.html">Back to Overview ↗</a></div></article>
+    </div>
+  </main>
+  <footer class="footer"><div><strong>Yuxin Fu</strong>Market Research | Data Analytics</div><div><a href="index.html#projects">Selected work ↗</a><br><a href="index.html#contact">Get in touch ↗</a></div><div>© <span id="year">2026</span> Yuxin Fu<br>Personal portfolio</div></footer>
+  <dialog id="resume" aria-labelledby="resume-title" lang="zh-CN"><button type="button" class="close" aria-label="关闭简历">×</button><div class="eyebrow" lang="en">Profile / Resume</div><h2 id="resume-title" lang="en">Yuxin Fu</h2><p>市场研究与数据分析师 · 你的城市</p><h3>个人简介</h3><p>在这里填写你的专业背景、核心能力和职业方向。</p><h3>工作经历</h3><p>职位名称 · 公司名称 · 起止时间<br>填写你的职责与可核实的项目成果。</p><h3>教育背景</h3><p>学校名称 · 专业 · 学位 · 毕业年份</p><h3>联系</h3><p><a href="mailto:hello@example.com">hello@example.com ↗</a></p></dialog>
+  <script>
+    const menuButton=document.querySelector('.menu-button');
+    const siteLinks=document.querySelector('.site-links');
+    menuButton.addEventListener('click',()=>{const expanded=siteLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(expanded));menuButton.setAttribute('aria-label',expanded?'Close navigation':'Open navigation');});
+    const resume=document.querySelector('#resume');
+    document.querySelector('#open-resume').addEventListener('click',()=>resume.showModal());
+    resume.querySelector('.close').addEventListener('click',()=>resume.close());
+    resume.addEventListener('click',event=>{if(event.target!==resume)return;const rect=resume.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)resume.close();});
+    const sectionLinks=[...document.querySelectorAll('.toc a')];
+    const sections=sectionLinks.map(link=>document.querySelector(link.getAttribute('href')));
+    let scheduled=false;
+    function updateContents(){let active=sections[0];for(const section of sections){if(section.getBoundingClientRect().top<=130)active=section;}sectionLinks.forEach(link=>{if(link.hash==='#'+active.id)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});scheduled=false;}
+    window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(updateContents);}},{passive:true});
+    updateContents();
+    document.querySelector('#year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
+
